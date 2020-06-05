@@ -5,8 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "start-dev": "NODE_ENV=dev PORT=3000 electron .",
-    "dev": "webpack-dev-server --mode=development && start ",
+    "dev": "PORT=3000  webpack-dev-server --mode=development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=development"
   },

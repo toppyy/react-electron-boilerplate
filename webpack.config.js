@@ -1,6 +1,10 @@
 const path = require('path')
 const child = require('child_process')
 
+
+const port = process.env.PORT || 3001;
+
+
 const config = {
   entry: './src/index.js',
   output: {
@@ -19,9 +23,9 @@ const config = {
   devServer: {
     contentBase: path.resolve(__dirname, 'build'),
     compress: true,
-    port: 3000,
+    port: port,
     before() {
-        child.spawn('npm', ['run', 'start-dev'], {
+        child.spawn('NODE_ENV=dev', ['PORT='.concat(port), 'electron .', ], {
           shell: true,
           env: process.env,
           stdio: 'inherit'
