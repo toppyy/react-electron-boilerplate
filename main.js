@@ -6,7 +6,7 @@ const luoSovellusIkkuna = () => {
     const sovellusIkkuna = new BrowserWindow()
     
     // lataa html
-    sovellusIkkuna.loadFile('index.html')
+    sovellusIkkuna.loadFile('./build/index.html')
 
 }
 
