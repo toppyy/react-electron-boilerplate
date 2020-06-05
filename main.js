@@ -4,8 +4,8 @@ const { app, BrowserWindow } = require('electron')
 
 const luoSovellusIkkuna = () => {
     const sovellusIkkuna = new BrowserWindow({
-        width: 1000,
-        height: 1000
+        width: 1200,
+        height: 600
     })
     
     // lataa html
