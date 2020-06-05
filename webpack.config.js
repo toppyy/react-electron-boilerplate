@@ -11,7 +11,7 @@ const config = {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['@babel/preset-react']
+          presets: ['@babel/preset-react', '@babel/preset-env']
         }
     }]
   }
