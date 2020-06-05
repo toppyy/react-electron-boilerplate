@@ -9,7 +9,13 @@ const luoSovellusIkkuna = () => {
     })
     
     // lataa html
-    sovellusIkkuna.loadFile('./build/index.html')
+    //
+
+    if (process.env.NODE_ENV === 'dev') {
+        sovellusIkkuna.loadURL('http://localhost:'.concat(process.env.PORT))
+    } else {
+        sovellusIkkuna.loadFile('./build/index.html')
+    }
 
      // Chrome-kehitystyokalut
     sovellusIkkuna.webContents.openDevTools()    
@@ -18,6 +24,9 @@ const luoSovellusIkkuna = () => {
 
 
 app.on('ready', () => {
+
+    console.log('ymparisto ja portti', process.env.NODE_ENV, process.env.PORT )
+
     console.log('Sovellus valmis')
     luoSovellusIkkuna()
 })
