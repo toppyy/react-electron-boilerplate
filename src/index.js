@@ -1,8 +1,15 @@
 
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-funktio = function() {
-    console.log('jee')
 
+const sovellus = () => {
+    return(
+        <div>
+            JSX Hello world!
+        </div>
+    )
 }
 
-document.getElementById('otsikko').addEventListener('click',funktio)
+
+ReactDOM.render(sovellus(), document.getElementById('sailio'))
