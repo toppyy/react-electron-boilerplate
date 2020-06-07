@@ -1,24 +1,28 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import Nappula from './Nappula'
+import createActionKasvataSummaa from '../actions/createActionKasvataSummaa'
 
-const Laskuri = () => {
+const Laskuri = ({ summa, dispatchaa }) => {
 
-    const [summa,setSumma] = useState(0)
 
-    const kasvataSummaa = () => {
-        const uusiSumma = summa + 1
-        setSumma(uusiSumma)
+    const kasitteleKlikkaus = () => {
+
+        dispatchaa( createActionKasvataSummaa() )
     }
+
 
     return(
         <div>
             
             Summa: { summa }
             <br></br>
-            <Nappula nappulaaKlikatessa={kasvataSummaa} teksti="Kasvata summaa"/>
+            <Nappula nappulaaKlikatessa={kasitteleKlikkaus} teksti="Kasvata summaa"/>
         </div>
     )
 }
+
+
+
 
 export default Laskuri
